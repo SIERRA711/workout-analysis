@@ -28,4 +28,4 @@ ENV/
 # Project Specific
 workout_report.html
 *.png
-# workout_data.csv # Uncomment if you want to exclude your personal data from git
+workout_data.csv # Uncomment if you want to exclude your personal data from git
