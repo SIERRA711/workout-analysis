@@ -121,10 +121,10 @@ def analyze_volume(df):
     return weekly_volume
 
 def analyze_muscle_distribution(df):
-    # Total volume by muscle group
-    muscle_vol = df.groupby('muscle_group')['volume'].sum()
-    # Remove 'Other' if it's too small or keep it
-    return muscle_vol
+    # Count valid sets (rows with volume) by muscle group
+    # This prevents 'Volume' bias (Legs vs Arms) and matches Hevy's "Set Count" metric
+    valid_sets = df[df['volume'] > 0]
+    return valid_sets['muscle_group'].value_counts()
 
 def analyze_volume_heatmap(df):
     # Aggregate volume by Week and Muscle Group
@@ -392,7 +392,7 @@ def generate_plots(consistency_data, progress_data, volume_data, muscle_dist, he
         except:
            pass
            
-        ax.set_title('Muscle Group Balance (%)', y=1.1, color='white')
+        ax.set_title('Muscle Balance (Set Count %)', y=1.1, color='white')
         plt.tight_layout()
         plots['radar'] = plot_to_base64(fig)
         

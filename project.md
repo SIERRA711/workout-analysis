@@ -10,6 +10,12 @@ It helps you track consistency, strength progress (E1RM), volume, and muscle bal
 -   `workout_report.html`: The generated dashboard (automatically opens after running).
 -   `strong-analysis.py`: Legacy script used for reference (contains advanced math/sklearn logic).
 
+## Version Control
+This project is git-initialized.
+-   **Remote**: [SIERRA711/workout-analysis](https://github.com/SIERRA711/workout-analysis)
+-   **One-time Setup**: Add git to PATH and configure identity (`git config --global user.email "you@example.com"`).
+-   **Ignore**: The `.gitignore` excludes `workout_data.csv` (privacy) and `workout_report.html` (generated).
+
 ## Features
 ### 📊 Visual Dashboard
 -   **Dark Mode** HTML Report.
